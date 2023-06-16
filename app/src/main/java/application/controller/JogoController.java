@@ -15,16 +15,16 @@ import application.model.JogoRepository;
 @Controller
 @RequestMapping("/jogo")
 public class JogoController{
-    {
-        @Autowired
-        private JogoRepository jogoRepo;
+    @Autowired
+    private JogoRepository jogoRepo;
     
-        @RequestMapping("/list")
+    
+      @RequestMapping("/list")
         public String list(Model model) {
             model.addAttribute("jogos", jogoRepo.findAll());
             return "/jogo/list";
         }
-    }
+    
     @RequestMapping("/insert")
     public String insert() {
         return "/jogo/insert";
@@ -34,7 +34,7 @@ public class JogoController{
     public String insert(
         @RequestParam("titulo") String titulo,
         @RequestParam("ano") int ano) {
-        Jogo jogo = new jogo();
+        Jogo jogo = new Jogo();
         jogo.setTitulo(titulo);
         jogo.setAno(ano);
 
@@ -57,7 +57,7 @@ public class JogoController{
     public String update(
         @RequestParam("id") int id,
         @RequestParam("titulo") String titulo,
-        @RequestParam("ano") int ano) {
+        @RequestParam("ano") int ano)  {
         Optional<Jogo> jogo = jogoRepo.findById(id);
 
         if(jogo.isPresent()) {
@@ -84,7 +84,7 @@ public class JogoController{
     public String delete(@RequestParam("id") int id) {
         jogoRepo.deleteById(id);
 
-        return "redirect:/jogo/list";
+        return "redirect:/jogo/list"; 
     }
 }
 
