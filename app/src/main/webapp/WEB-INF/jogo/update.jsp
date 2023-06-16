@@ -17,12 +17,12 @@
                 </div>
                 <div class="form-group">
                     <label for="ano">Ano de Lançamento:</label>
-                    <input type="hidden" name="ano"  value="${jogo.ano}" />
+                    <input type="hidden" name="ano" value="${jogo.ano}" />
                 </div>
                 <br />
                 <a href="/jogo/list" class="btn btn-primary" >Voltar</a>
                 <button type="submit" class="btn btn-success">Salvar</button>
             </form>
-        </div>
+        </div>  
     </body>
 </html>

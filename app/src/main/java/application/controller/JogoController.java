@@ -84,7 +84,7 @@ public class JogoController{
     public String delete(@RequestParam("id") int id) {
         jogoRepo.deleteById(id);
 
-        return "redirect:/jogo/list"; 
+        return "redirect:/jogo/list";
     }
 }
 
